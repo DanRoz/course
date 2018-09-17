@@ -16,8 +16,8 @@ node {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-   stage('Results') {
-      junit '**/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
+   
+   stage('Check existence') {
+      sh 'ls -ltr ~/workspace/test/web/target/*.war'
    }
 }
