@@ -4,8 +4,8 @@
     - name: Log into Docker Hub and force re-authorization
       docker_login:
         username: danroz
-        password: Dan8101995!
-        email: danroz3@gmail.com
+        password: *********
+        email: *********
         reauthorize: yes
         
     - name: push an image
