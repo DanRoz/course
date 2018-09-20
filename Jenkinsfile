@@ -19,6 +19,7 @@ node {
    
    stage('Check existence') {
       sh 'ls -ltr ~/workspace/test/web/target/*.war'
+      sh 'cp ~/workspace/test/web/target/*.war $(pwd)'
    }
    
    stage('Create Docker image') {
