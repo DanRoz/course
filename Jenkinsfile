@@ -23,6 +23,16 @@ node {
    
    stage('Create Docker image') {
       checkout scm
-      sh 'docker build -t danroz/course .'
+      sh 'docker build -t danroz/time-tracker .'
+   }
+   
+   stage('Ansible push image to nexus') {
+      checkout scm
+      sh 'ansible-playbook docker_push_playbook.yml'
+   }
+   
+   stage('Ansible pull and run image') {
+      checkout scm
+      sh 'ansible-playbook docker_pull_run_playbook.yml'
    }
 }
