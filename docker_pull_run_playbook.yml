@@ -1,0 +1,14 @@
+- name: Ansible Docker step
+  hosts: localhost
+  tasks:
+    - name: pull an image
+      docker_image:
+        name: danroz/time-tracker:latest
+    
+    - name: Start a container
+      docker_container:
+        name: time-tracker
+        image: danroz/time-tracker:latest
+        state: started
+        ports:
+         - "80:8080"
