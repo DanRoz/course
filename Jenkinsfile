@@ -23,6 +23,6 @@ node {
    
    stage('Create Docker image') {
       checkout scm
-      sh 'docker build -t DanRoz/course .'
+      sh 'docker build -t danroz/course .'
    }
 }
