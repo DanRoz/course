@@ -20,4 +20,9 @@ node {
    stage('Check existence') {
       sh 'ls -ltr ~/workspace/test/web/target/*.war'
    }
+   
+   stage('Create Docker image') {
+      checkout scm
+      sh 'docker build -t DanRoz/course .'
+   }
 }
